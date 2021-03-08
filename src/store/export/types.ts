@@ -13,7 +13,9 @@ export interface StateInterface {
   items: Array<GithubRepo>,
   page: number,
   searchQuery: string,
-  loading: boolean
+  loading: boolean,
+  pages_count: number,
+  searchHistory: Array<string>
 }
 
 export type GithubListActions = ActionType<typeof actions>;

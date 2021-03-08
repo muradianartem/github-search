@@ -1,0 +1,19 @@
+@import "./shared/styles/colors.scss";
+
+body {
+  color: $color-main;
+}
+
+a:visited {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+a:link {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+a:hover {
+  color: coral;
+}

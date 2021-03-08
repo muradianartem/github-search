@@ -1,0 +1,13 @@
+@import "../../styles/colors.scss";
+@import "../../styles/spacings.scss";
+
+.base-form-button {
+  background-color: $color-blue;
+  color: $color-white;
+  padding: $padding $padding-big;
+  border: 0;
+  margin: $margin $margin-big;
+  &:hover {
+    cursor: pointer;
+  }
+}

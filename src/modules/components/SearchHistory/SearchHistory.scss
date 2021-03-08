@@ -1,0 +1,29 @@
+@import "../../../shared/styles/colors.scss";
+@import "../../../shared/styles/spacings.scss";
+@import "../../../shared/styles/mixins.scss";
+
+.search-history {
+  display: flex;
+  justify-content: center;
+}
+
+.search-history-title{
+  @include headFontStyle;
+  margin-right: 40px;
+}
+
+.clear-search-history {
+  @include smallClickableSpan;
+}
+
+.search-history-items {
+  max-height: 100px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.search-history-item {
+  &:hover {
+    cursor: pointer;
+  }
+}

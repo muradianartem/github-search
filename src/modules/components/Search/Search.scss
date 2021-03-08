@@ -1,0 +1,11 @@
+@import "../../../shared/styles/spacings.scss";
+
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: $margin-big;
+}
+
+.search-input {
+  width: 300px;
+}

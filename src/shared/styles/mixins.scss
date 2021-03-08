@@ -1,0 +1,21 @@
+@import "./colors.scss";
+
+@mixin tableBorder {
+  border-bottom: 1px solid $color-grey;
+  padding: $padding;
+}
+
+@mixin headFontStyle {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+@mixin smallClickableSpan {
+  font-size: 12px;
+  font-weight: 500;
+  color: $color-grey;
+  &:hover {
+    cursor: pointer;
+  }
+}
+

@@ -1,9 +1,11 @@
 import React from "react";
-import axios from "axios";
 
 import Search from "./components/Search";
 import SearchResultTable from "./components/SearchResultTable";
 import { GithubRepo } from "../store/export/types";
+import SearchHistory from "./components/SearchHistory";
+
+import "./Module.scss";
 
 export interface SearchResultGithub {
   data: DataSearchGithub;
@@ -17,10 +19,12 @@ export interface DataSearchGithub {
 
 const Module: React.FC<any> = () => {
   return(
-    <>
+    <div className="module-wrapper">
+      <span className="app-title"> Github Search App </span>
       <Search />
+      <SearchHistory />
       <SearchResultTable />
-    </>
+    </div>
   )
 }
 

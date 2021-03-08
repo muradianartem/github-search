@@ -5,7 +5,9 @@ const init: StateInterface = {
   items: [],
   page: 0,
   searchQuery: '',
-  loading: false
+  loading: false,
+  pages_count: 0,
+  searchHistory: []
 };
 
 export function githubList(state: StateInterface = init, action?: any): StateInterface {
@@ -16,7 +18,11 @@ export function githubList(state: StateInterface = init, action?: any): StateInt
       return { ...state, ...action.payload};
     case Constants.SET_ITEMS:
       return { ...state, ...action.payload};
+    case Constants.SET_PAGES_COUNT:
+      return { ...state, ...action.payload};
     case Constants.SET_SEARCH_QUERY:
+      return {...state, ...action.payload};
+    case Constants.SET_SEARCH_HISTORY:
       return {...state, ...action.payload};
     default:
       return state;

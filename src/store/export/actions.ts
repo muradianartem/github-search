@@ -26,8 +26,14 @@ export function setLoading(loading: boolean) {
   });
 }
 
-export function setPages(total_count: number) {
-  return action(Constants.LOADING, {
-    total_count
+export function setPages(pages_count: number) {
+  return action(Constants.SET_PAGES_COUNT, {
+    pages_count
+  });
+}
+
+export function setSearchHistory(searchHistory: Array<string>) {
+  return action(Constants.SET_SEARCH_HISTORY, {
+    searchHistory
   });
 }

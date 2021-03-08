@@ -1,0 +1,14 @@
+@import "../shared/styles/spacings.scss";
+@import "../shared/styles/mixins.scss";
+
+.module-wrapper {
+  display: grid;
+  justify-content: center;
+  margin: $margin-big 40px;
+}
+
+.app-title {
+  @include headFontStyle;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,32 @@
+@import "../../../shared/styles/colors.scss";
+@import "../../../shared/styles/spacings.scss";
+@import "../../../shared/styles/mixins.scss";
+
+.table-wrapper {
+  table {
+    border-collapse: collapse;
+  }
+}
+
+.repo-table_head th {
+  @include tableBorder;
+  @include headFontStyle;
+}
+
+.repo-item td {
+  @include tableBorder;
+}
+
+.item {
+  display: inline;
+  margin: $margin-small;
+  padding: $padding $padding-big;
+  border: 1px solid $color-grey;
+}
+
+.pagination {
+  margin-top: $margin-big;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end;
+}
