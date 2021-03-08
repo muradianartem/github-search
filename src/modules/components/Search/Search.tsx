@@ -1,25 +1,40 @@
 import React from "react";
+import { connect } from "react-redux";
+import { Dispatch } from "redux";
 
-interface SearchInterface {
-  onSearch: (e: string) => void;
-}
+import { GithubListActions } from "../../../store/export/types";
+import * as actions from "../../../store/export/actions";
+import * as asyncActions from "../../../store/export/async-actions";
 
-const Search: React.FC<SearchInterface> = ({ onSearch }) => {
-  const [searchQuery, setSearchQuery] = React.useState('');
+interface SearchInterface extends ReduxGithubListType {};
 
+type ReduxGithubListType = ReturnType<typeof mapDispatcherToProps>;
+
+const mapDispatcherToProps = (dispatch: Dispatch<GithubListActions>) => {
+  return {
+    getGithubRepoList: () => asyncActions.getGithubRepoList(dispatch),
+    setSearchQuery: (searchQuery: string) => dispatch(actions.setSearchQuery(searchQuery)),
+  };
+};
+
+const Search: React.FC<SearchInterface> = ({ setSearchQuery, getGithubRepoList }) => {
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
 
-    onSearch(searchQuery);
+    getGithubRepoList();
+  }
+
+  const handleClear = () => {
+    setSearchQuery("");
   }
 
   return(
     <form onSubmit={handleSubmit}>
       <input placeholder="type query..." onChange={(e) => setSearchQuery(e.target.value)} />
       <button type="submit" onSubmit={handleSubmit}>Search</button>
-      <button type="reset">Clear</button>
+      <button type="reset" onClick={handleClear}>Clear</button>
     </form>
   )
 }
 
-export default Search;
+export default connect(null, mapDispatcherToProps)(Search);
